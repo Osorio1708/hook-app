@@ -29,13 +29,18 @@ export const MultipleCustomHooks = () => {
       )}
 
       <button
+        disabled={isLoading}
         className="btn btn-primary mt-2"
         onClick={() => (counter > 1 ? decrement() : null)}
       >
         Anterior
       </button>
 
-      <button className="btn btn-primary mt-2" onClick={() => increment()}>
+      <button
+        disabled={isLoading}
+        className="btn btn-primary mt-2"
+        onClick={() => increment()}
+      >
         Siguiente
       </button>
     </>
