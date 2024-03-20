@@ -1,5 +1,4 @@
 import { MultipleCustomHooks } from "../../src/03-examples/MultipleCustomHooks";
-import "@testing-library/jest-dom";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { useCounter } from "../../src/hooks/useCounter";
 import { useFetch } from "../../src/hooks/useFetch";
@@ -53,7 +52,7 @@ describe("Pruebas en <MultipleCustomHooks />", () => {
     const nextButton = screen.getByRole("button", { name: "Siguiente" });
     const imgs = screen.getAllByRole("img");
     for (const img of imgs) {
-      expect(img).toHaveAttribute("src", expect.stringContaining("https://"));
+      expect(img.src).toContain("https://");
     }
     expect(previousButton).toBeDefined();
     expect(nextButton).toBeDefined();
